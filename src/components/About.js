@@ -1,13 +1,15 @@
 import React from "react";
-
-function About() {
+import Links from './Links'; // Import Links component
+const  About = ( { bio, github, linkedin}) => {
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      <p> {bio && <p>{bio}</p>} {/* Conditionally render the bio */}
+      </p>
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      <Links github={github} linkedin={linkedin} /> {/* Pass down links  */}
     </div>
+
   );
 }
 
